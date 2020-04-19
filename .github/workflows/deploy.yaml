@@ -3,7 +3,7 @@ name: CI/CD
 on: [push]
 
 jobs:
-  lint:
+  hadolint:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -13,3 +13,40 @@ jobs:
         wget https://github.com/hadolint/hadolint/releases/download/v1.17.5/hadolint-Linux-x86_64 -O hadolint
         chmod +x hadolint
         ./hadolint Dockerfile
+  
+  npm-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x]
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: npm install
+      run: cd app && npm install
+  
+    - name: npm run pretest
+      run: |
+        cd app
+        npm run pretest
+        
+  build:
+    runs-on: ubuntu-latest
+    needs: ['hadolint', 'npm-test']
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build Docker image
+        run: |
+          cd app
+          docker build -t ankitjain28/capstone:$GITHUB_SHA .
+          docker login --username ankitjain28 -p $DOCKER_PASSWORD
+          docker push ankitjain28/capstone:$GITHUB_SHA
+        env:
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+
+
