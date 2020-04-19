@@ -18,9 +18,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Installing hadolint
-      run: sudo apt-get install hadolint
+      run: |
+        wget https://github.com/hadolint/hadolint/releases/download/v1.17.5/hadolint-Linux-x86_64 > hadolint
+        chmod +x hadolint && mv hadolint ~/bin/hadolint
     - name: Linting
       run: |
         cd app
-        hadolint Dockerfile
+        ~/bin/hadolint Dockerfile
         docker
