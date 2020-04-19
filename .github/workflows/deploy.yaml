@@ -10,6 +10,6 @@ jobs:
     - name: Hadolint test
       run: |
         cd app
-        wget https://github.com/hadolint/hadolint/releases/download/v1.17.5/hadolint-Linux-x86_64 > hadolint
+        wget https://github.com/hadolint/hadolint/releases/download/v1.17.5/hadolint-Linux-x86_64 -O hadolint
         chmod +x hadolint
         hadolint Dockerfile
