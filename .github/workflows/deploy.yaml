@@ -68,7 +68,12 @@ jobs:
           aws eks update-kubeconfig --name eks-cluster --kubeconfig kubeconfig
           export KUBECONFIG=$PWD/kubeconfig
           ./kubectl get pods -n kube-system
-          ./kubectl apply -f app-k8s/*
+          ./kubectl apply -f app-k8s/app-ns.yaml --validate=false
+          ./kubectl apply -f app-k8s/app-svc.yaml --validate=false
+          ./kubectl apply -f app-k8s/app-deployment.yaml --validate=false
+          ./kubectl apply -f app-k8s/app-ingress.yaml --validate=false
+
+          ./kubectl get pods -n app
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
