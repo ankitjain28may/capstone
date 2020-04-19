@@ -67,6 +67,7 @@ jobs:
           chmod +x ./kubectl
           aws eks update-kubeconfig --name eks-cluster --kubeconfig kubeconfig
           export KUBECONFIG=$PWD/kubeconfig
+          sed -i "s/GITHUB_SHA/$GITHUB_SHA/g" app-k8s/app-deployment.yaml
           ./kubectl get pods -n kube-system
           ./kubectl apply -f app-k8s/app-ns.yaml --validate=false
           ./kubectl apply -f app-k8s/app-svc.yaml --validate=false
