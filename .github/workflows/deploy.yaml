@@ -58,7 +58,7 @@ jobs:
       - name: Installing pip
         run: |
           sudo apt-get update -y
-          sudo apt-get install unzip python3-pip awscli -y
+          sudo apt-get install unzip python3-pip python3-setuptools awscli -y
           pip3 install --upgrade awscli
       
       - name: Installing eksctl 
