@@ -13,4 +13,4 @@ spec:
       - path: /
         backend:
           serviceName: app
-          servicePort: admin
+          servicePort: http

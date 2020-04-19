@@ -8,6 +8,8 @@ RUN npm install
 
 COPY . .
 
+USER root
+
 EXPOSE 9000
 
 CMD ["node", "index.js"]
