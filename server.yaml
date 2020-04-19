@@ -52,6 +52,20 @@ Parameters:
       hi1.4xlarge, hs1.8xlarge, cr1.8xlarge, cc2.8xlarge, cg1.4xlarge]
 
 Resources:
+  EKSFullAccess:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: EKSFullAccess
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Action:
+              - 'eks:*'
+            Resource: '*'
+      Groups:
+        - !Ref GroupName
+
   Group:
     Type: AWS::IAM::Group
     Properties: 

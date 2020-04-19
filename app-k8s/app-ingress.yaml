@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: app
+  namespace: app
+  annotations:
+    kubernetes.io/ingress.class: traefik-class
+spec:
+  rules:
+  - host: capstone-app.local
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: app
+          servicePort: admin

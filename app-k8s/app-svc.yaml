@@ -1,0 +1,14 @@
+# node-app service
+kind: Service
+apiVersion: v1
+metadata:
+  name: app
+  namespace: app
+spec:
+  selector:
+    k8s-app: app
+  ports:
+  - protocol: TCP
+    name: http
+    port: 80
+    targetPort: 9000
