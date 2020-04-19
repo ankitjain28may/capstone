@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-USER root
+USER node
 
 EXPOSE 9000
 
