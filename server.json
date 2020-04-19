@@ -1,0 +1,34 @@
+[
+  {
+    "ParameterKey": "EnvironmentName",
+    "ParameterValue": "Testing"
+  },
+  {
+    "ParameterKey": "TagName",
+    "ParameterValue": "capstone"
+  },
+  {
+    "ParameterKey": "Owner",
+    "ParameterValue": "Ankit Jain"
+  },
+  {
+    "ParameterKey": "ImageID",
+    "ParameterValue": "ami-0620d12a9cf777c87"
+  },
+  {
+    "ParameterKey": "InstanceType",
+    "ParameterValue": "t3.medium"
+  },
+  {
+    "ParameterKey": "KeyPairName",
+    "ParameterValue": ""
+  },
+  {
+    "ParameterKey": "GroupName",
+    "ParameterValue": "capstone-ci"
+  },
+  {
+    "ParameterKey": "UserName",
+    "ParameterValue": "capstone-ci"
+  }
+]
