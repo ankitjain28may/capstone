@@ -1,0 +1,50 @@
+[
+    {
+        "ParameterKey": "ClusterName",
+        "ParameterValue": "eks-cluster"
+    },
+    {
+        "ParameterKey": "KeyName",
+        "ParameterValue": ""
+    },
+    {
+        "ParameterKey": "NodeAutoScalingGroupDesiredCapacity",
+        "ParameterValue": "2"
+    },
+    {
+        "ParameterKey": "NodeAutoScalingGroupMaxSize",
+        "ParameterValue": "3"
+    },
+    {
+        "ParameterKey": "NodeAutoScalingGroupMinSize",
+        "ParameterValue": "1"
+    },
+    {
+        "ParameterKey": "NodeGroupName",
+        "ParameterValue": "capstone-node"
+    },
+    {
+        "ParameterKey": "NodeImageId",
+        "ParameterValue": "ami-0b0bc41a50e8cd33e"
+    },
+    {
+        "ParameterKey": "NodeInstanceType",
+        "ParameterValue": "t2.small"
+    },
+    {
+        "ParameterKey": "EnvironmentName",
+        "ParameterValue": "Testing"
+    },
+    {
+        "ParameterKey": "TagName",
+        "ParameterValue": "capstone"
+    },
+    {
+        "ParameterKey": "Owner",
+        "ParameterValue": "Ankit Jain"
+    },
+    {
+        "ParameterKey": "NodeVolumeSize",
+        "ParameterValue": "10"
+    }
+]
