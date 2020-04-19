@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "pretest": "eslint --ignore-path .gitignore ."
+    "pretest": "eslint --ignore-path ../.gitignore ."
   },
   "keywords": [],
   "author": "Ankit Jain",
