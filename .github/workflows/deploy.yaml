@@ -46,15 +46,26 @@ jobs:
           docker build -t ankitjain28/capstone:$GITHUB_SHA .
           docker login --username ankitjain28 -p $DOCKER_PASSWORD
           docker push ankitjain28/capstone:$GITHUB_SHA
-          echo "=====Docker Images===="
-          docker images
-          echo "=====Docker Running Container===="
-          docker run -d -p 9000:9000 ankitjain28/capstone:$GITHUB_SHA
-          echo "=====Docker Container===="
-          docker ps
-          curl localhost:9000
         env:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      
+      - name: Showing Docke images
+        run: |
+          echo "=====Docker Images===="
+          docker images
+      
+      - name: Running the Docker container
+        run: |
+          echo "=====Docker Running Container===="
+          docker run -d -p 9000:9000 ankitjain28/capstone:$GITHUB_SHA
+
+          echo "=====Docker Container===="
+          docker ps
+
+      - name: Clean up
+        run: docker system prune -f
+          
+        
 
 
   deployment:
