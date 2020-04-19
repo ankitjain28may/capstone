@@ -50,3 +50,18 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
 
+  deployment:
+    runs-on: ubuntu-latest
+    needs: ['build']
+    steps:
+      - uses: actions/checkout@v1
+      - name: Installing pip
+        run: |
+          sudo apt-get install unzip python3-pip awscli -y
+          pip3 install --upgrade awscli
+      
+      - name: Installing eksctl 
+        run: |
+          curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+          sudo mv /tmp/eksctl /usr/local/bin
+          /usr/local/bin/eksctl --help 
