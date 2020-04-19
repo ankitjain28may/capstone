@@ -1,0 +1,6 @@
+# Traefik servicesAsccount
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: traefik-ingress
+  namespace: kube-system
