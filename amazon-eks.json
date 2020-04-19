@@ -1,0 +1,14 @@
+[
+    {
+      "ParameterKey": "EnvironmentName",
+      "ParameterValue": "Testing"
+    },
+    {
+      "ParameterKey": "TagName",
+      "ParameterValue": "capstone"
+    },
+    {
+      "ParameterKey": "Owner",
+      "ParameterValue": "Ankit Jain"
+    }
+]
