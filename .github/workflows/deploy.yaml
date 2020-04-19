@@ -3,26 +3,13 @@ name: CI/CD
 on: [push]
 
 jobs:
-  build:
-
+  lint:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x]
-
     steps:
     - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Installing hadolint
-      run: |
-        wget https://github.com/hadolint/hadolint/releases/download/v1.17.5/hadolint-Linux-x86_64 > hadolint
-        chmod +x hadolint && mv hadolint ~/bin/hadolint
-    - name: Linting
+    - name: Hadolint test
       run: |
         cd app
-        ~/bin/hadolint Dockerfile
-        docker
+        wget https://github.com/hadolint/hadolint/releases/download/v1.17.5/hadolint-Linux-x86_64 > hadolint
+        chmod +x hadolint
+        hadolint Dockerfile
