@@ -10,7 +10,7 @@ metadata:
     traefik.ingress.kubernetes.io/auth-secret: admin
 spec:
   rules:
-  - host: capstone.local
+  - host: capstone.facelessvoid.co
     http:
       paths:
       - path: /

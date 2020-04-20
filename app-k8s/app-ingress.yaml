@@ -7,7 +7,7 @@ metadata:
     kubernetes.io/ingress.class: traefik-class
 spec:
   rules:
-  - host: capstone-app.local
+  - host: app.facelessvoid.co
     http:
       paths:
       - path: /
