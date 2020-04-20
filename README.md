@@ -66,6 +66,14 @@ For creating the CI/CD user and bastion nodes, run the server.yaml template with
     aws cloudformation delete-stack --stack-name <stack_name>
     ```
 
+**NOTE:** Rename `aws-auth.example.yaml` to `aws-auth.yaml` and set the correct AWS Account Number apply using kubectl in `kube-system` namespace so your worker nodes can join the cluster and CI user can also have the access to the cluster.
+
+```bash
+    cp aws-auth.example.yaml aws-auth.yaml
+    sed -i 's/AWS_ACCOUNT_NO/<AWS_ACCOUNT_NO>/g' aws-auth.yaml
+    kubectl apply -f aws-auth.yaml
+```
+
 ### Components
 
 * [x] VPC

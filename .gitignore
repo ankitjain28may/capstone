@@ -2,3 +2,4 @@ traefik/auth
 aws-auth.yaml
 kubeconfig
 app/node_modules
+screenshot

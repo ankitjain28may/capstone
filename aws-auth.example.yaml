@@ -6,6 +6,10 @@ data:
       - system:nodes
       rolearn: arn:aws:iam::<AWS_ACCOUNT_NO>:role/NodeInstanceRoleForEKS
       username: system:node:{{EC2PrivateDNSName}}
+    - rolearn: arn:aws:iam::<AWS_ACCOUNT_NO>:user/capstone-ci
+      username: capstone-ci
+      groups:
+        - system:masters
 kind: ConfigMap
 metadata:
   name: aws-auth
