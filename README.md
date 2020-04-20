@@ -1,5 +1,7 @@
 # Capstone
 
+[![Github Actions](https://github.com/ankitjain28may/capstone/workflows/CI/badge.svg)](https://github.com/ankitjain28may/capstone/workflows/CI/badge.svg) [![Github Actions](https://github.com/ankitjain28may/capstone/workflows/CD/badge.svg)](https://github.com/ankitjain28may/capstone/workflows/CD/badge.svg)
+
 The project setup Kubernetes EKS cluster in a private subnet using cloudformation and perform the Rolling update through CI/CD pipeline. GitHub Actions are being used for CI/CD where the image has been built and pushed to the corresponding DockerHub repo post linting.
 
 ## Creating Network Stack
